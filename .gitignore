@@ -1,0 +1,8 @@
+
+# Exclude raw data but retain README landing pad
+downloads/
+!downloads/README.md
+
+# Exclude transformed data but retain README landing pad
+transformed/
+!./transformed/README.md

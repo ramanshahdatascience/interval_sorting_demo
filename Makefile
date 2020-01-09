@@ -8,6 +8,7 @@
 
 .PHONY: clean veryclean download
 download: ./downloads/townest.xlsx ./downloads/overdose_index.html
+	./get_pdfs.sh
 
 clean:
 	find ./transformed -mindepth 1 | grep -v 'README' | xargs rm -r
