@@ -1,5 +1,8 @@
 # Pipeline to prepare the data for Tableau
 
+./transformed/population.csv:
+	python clean_populations.py
+
 ./downloads/townest.xlsx:
 	curl http://www.dlt.ri.gov/lmi/excel/townest.xlsx > ./downloads/townest.xlsx
 
