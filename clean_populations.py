@@ -5,7 +5,7 @@ import csv
 from openpyxl import load_workbook
 
 workbook = load_workbook(filename='./downloads/townest.xlsx')
-with open('./transformed/population.csv', 'w', newline='') as csvfile:
+with open('./transformed/populations.csv', 'w', newline='') as csvfile:
     fieldnames = ['municipality', 'population']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()

@@ -1,16 +1,23 @@
 # Pipeline to prepare the data for Tableau
 
-./transformed/population.csv:
+pdfs = $(wildcard ./downloads/*.pdf)
+
+all: ./transformed/populations.csv ./transformed/incidents.csv
+
+./transformed/populations.csv: ./downloads/townest.xlsx
 	python clean_populations.py
 
-./downloads/townest.xlsx:
+./transformed/incidents.csv: $(pdfs)
+	python clean_incidents.py $^
+
+.PHONY: clean veryclean download download_populations download_pdfs
+download: download_populations download_pdfs
+
+download_populations:
 	curl http://www.dlt.ri.gov/lmi/excel/townest.xlsx > ./downloads/townest.xlsx
 
-./downloads/overdose_index.html:
+download_pdfs:
 	curl https://health.ri.gov/data/drugoverdoses/ > ./downloads/overdose_index.html
-
-.PHONY: clean veryclean download
-download: ./downloads/townest.xlsx ./downloads/overdose_index.html
 	./get_pdfs.sh
 
 clean:
