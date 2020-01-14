@@ -2,7 +2,10 @@
 
 pdfs = $(wildcard ./downloads/*.pdf)
 
-all: ./transformed/populations.csv ./transformed/incidents.csv
+all: ./transformed/incident_rates.csv
+
+./transformed/incident_rates.csv: ./transformed/populations.csv ./transformed/incidents.csv
+	python compute_incident_rates.py
 
 ./transformed/populations.csv: ./downloads/townest.xlsx
 	python clean_populations.py
