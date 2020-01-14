@@ -1,0 +1,10 @@
+name: interval_sorting_demo
+channels:
+- defaults
+dependencies:
+- python=3.6.10
+- pandas=0.25.3
+- pip:
+  - openpyxl=3.0.2
+  - PyMuPDF=1.6.10
+- scipy=1.3.2
