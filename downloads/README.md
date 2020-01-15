@@ -1,7 +1,6 @@
 # Downloaded data files
 
-This directory will be empty in version control beyond this `README.md` to
-respect copyright. In use, it includes:
+This directory includes:
 
 - Census population estimates for the 39 Rhode Island municipalities, via
   http://www.dlt.ri.gov/lmi/excel/townest.xlsx
