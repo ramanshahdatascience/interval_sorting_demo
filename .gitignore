@@ -6,3 +6,6 @@ downloads/
 # Exclude transformed data but retain README landing pad
 transformed/
 !./transformed/README.md
+
+# Mac OS X files
+.DS_Store
